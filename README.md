@@ -38,7 +38,7 @@ npm run dev
 https://rain-run.monzblog.com （Cloudflare Pages / build: `npm run build` / output: `dist`）
 
 ## Roadmap
-- [ ] 公開（Cloudflare Pages）
+- [x] 公開（Cloudflare Pages）
 - [ ] 身長・体格を変えられるようにする
 - [ ] 横風（左右からの風）に対応
 - [ ] 傘あり・フード付きなど装備の比較
@@ -48,4 +48,4 @@ https://rain-run.monzblog.com （Cloudflare Pages / build: `npm run build` / out
 `npm run dev` を起動した状態で `npm run promo` → `promo/rain-run-promo.mp4`（18秒・1080×1080）
 
 ## Status
-labs（公開準備中）
+公開中（labs）— https://rain-run.monzblog.com
