@@ -34,5 +34,18 @@ npm run dev
 ```
 `scripts/check.ts`（`npx tsx scripts/check.ts`）でシミュレーションと理論値を比較できる。
 
+## Domain
+https://rain-run.monzblog.com （Cloudflare Pages / build: `npm run build` / output: `dist`）
+
+## Roadmap
+- [ ] 公開（Cloudflare Pages）
+- [ ] 身長・体格を変えられるようにする
+- [ ] 横風（左右からの風）に対応
+- [ ] 傘あり・フード付きなど装備の比較
+- [ ] 結果をシェアできる画像の書き出し
+
+## 宣伝動画
+`npm run dev` を起動した状態で `npm run promo` → `promo/rain-run-promo.mp4`（18秒・1080×1080）
+
 ## Status
-labs（試作）
+labs（公開準備中）

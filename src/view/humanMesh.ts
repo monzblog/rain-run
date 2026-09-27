@@ -23,7 +23,7 @@ const HEAT = [new THREE.Color('#f4f6f8'), new THREE.Color('#7fc4f5'), new THREE.
 export type ColorMode = 'real' | 'heat'
 
 const SIGMA = 0.028 // 水滴が布に広がる半径 (m)
-const SAT_MM = 0.014 // この濡れ量(mm)で色がほぼ変わりきる
+const SAT_MM = 0.03 // この濡れ量(mm)で色がほぼ変わりきる
 
 interface PartMesh {
   mesh: THREE.Mesh
