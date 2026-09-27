@@ -6,7 +6,8 @@
     "dev": "vite",
     "build": "tsc --noEmit && vite build",
     "preview": "vite preview",
-    "promo": "node scripts/capture-promo.mjs"
+    "promo": "node scripts/capture-promo.mjs",
+    "promo:short": "node scripts/capture-promo.mjs short"
   },
   "type": "module",
   "dependencies": {

@@ -1,0 +1,75 @@
+/* 縦型ショート 1080x1920。安全領域: 上 230px・下 350px・右 140px を文字で使わない */
+html, body { margin: 0; background: #15191d; }
+body { font-family: 'Hiragino Sans', 'Noto Sans JP', system-ui, sans-serif; color: #eef2f5; }
+#frame { position: relative; width: 1080px; height: 1920px; overflow: hidden; }
+#c { width: 1080px; height: 1920px; display: block; }
+#overlay { position: absolute; inset: 0; pointer-events: none; }
+.divider { position: absolute; left: 0; right: 0; top: 958px; height: 4px; background: #15191d; }
+em { font-style: normal; color: #7fc4f5; }
+
+.title {
+  position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center;
+  padding-bottom: 120px;
+  background: radial-gradient(ellipse at center, rgba(12, 16, 20, 0.78), rgba(12, 16, 20, 0.4));
+  text-shadow: 0 4px 18px rgba(0, 0, 0, 0.6); text-align: center;
+}
+.title h1 { font-size: 190px; margin: 30px 0; line-height: 1.15; letter-spacing: 0.04em; font-weight: 900; }
+.title .sub { font-size: 64px; font-weight: 800; line-height: 1.4; }
+.title.cta h1 { font-size: 140px; }
+.title .url {
+  margin-top: 60px; font-size: 50px; padding: 18px 44px; border-radius: 999px;
+  background: #7fc4f5; color: #0c1a26; font-weight: 900; text-shadow: none; letter-spacing: 0.01em;
+}
+
+.hud { position: absolute; left: 40px; text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7); }
+.hud-0 { top: 240px; }
+.hud-1 { top: 1000px; }
+.pill { font-size: 50px; font-weight: 900; padding: 6px 30px; border-radius: 999px; text-shadow: none; }
+.spd { font-size: 40px; margin-left: 14px; font-weight: 800; }
+.wet { font-size: 46px; margin-top: 8px; font-weight: 800; }
+.wet b { font-size: 120px; font-variant-numeric: tabular-nums; }
+.wet small { display: block; font-size: 38px; color: #d5dce2; margin-top: -6px; }
+.bar { width: 380px; height: 12px; margin-top: 10px; background: rgba(255, 255, 255, 0.25); border-radius: 6px; overflow: hidden; }
+.bar div { height: 100%; }
+
+.tag {
+  position: absolute; left: 40px; top: 790px; font-size: 34px; line-height: 1.4;
+  background: rgba(10, 14, 18, 0.78); padding: 12px 22px; border-radius: 14px;
+}
+.verdict {
+  position: absolute; left: 40px; right: 140px; top: 1290px; text-align: center;
+  font-size: 72px; font-weight: 900; line-height: 1.25;
+  background: rgba(10, 14, 18, 0.88); padding: 26px 30px; border-radius: 28px; border: 3px solid #d95926;
+}
+.verdict em { color: #ff8a5c; }
+.verdict b { font-size: 150px; color: #fff; }
+.note {
+  position: absolute; left: 40px; font-size: 62px; font-weight: 900; line-height: 1.2;
+  background: rgba(10, 14, 18, 0.85); padding: 18px 30px; border-radius: 20px;
+}
+.note small { display: block; font-size: 34px; color: #b9c2ca; font-weight: 700; margin-top: 6px; }
+.n0 { top: 700px; border-left: 14px solid #3987e5; }
+.n1 { top: 1400px; border-left: 14px solid #d95926; }
+
+.dim { position: absolute; inset: 0; background: rgba(14, 18, 22, 0.86); }
+.panel { position: absolute; top: 250px; bottom: 370px; left: 60px; right: 110px; display: flex; flex-direction: column; justify-content: center; }
+.ptitle { font-size: 92px; font-weight: 900; margin-bottom: 30px; line-height: 1.25; }
+.legend { display: flex; flex-wrap: wrap; gap: 16px 40px; font-size: 36px; margin-bottom: 40px; color: #b9c2ca; }
+.legend i { display: inline-block; width: 40px; height: 16px; border-radius: 8px; margin-right: 12px; vertical-align: middle; }
+.rrow { display: grid; grid-template-columns: 1fr 170px; margin-bottom: 44px; }
+.rlabel { grid-column: 1 / -1; font-size: 42px; font-weight: 800; margin-bottom: 10px; }
+.rbars { display: grid; gap: 10px; }
+.rb { display: flex; align-items: center; gap: 14px; height: 52px; }
+.rb .fill { height: 48px; border-radius: 0 12px 12px 0; min-width: 4px; }
+.rb span { font-size: 36px; font-variant-numeric: tabular-nums; color: #dfe5ea; white-space: nowrap; }
+.rpct { align-self: center; font-size: 64px; font-weight: 900; color: #ff8a5c; text-align: right; }
+.cols { display: flex; gap: 22px; align-items: flex-end; height: 640px; }
+.col { flex: 1; height: 100%; display: flex; flex-direction: column; justify-content: flex-end; align-items: center; }
+.cbar { width: 100%; border-radius: 16px 16px 0 0; min-height: 4px; }
+.cval { font-size: 58px; font-weight: 900; margin-bottom: 10px; font-variant-numeric: tabular-nums; }
+.cval small { font-size: 28px; margin-left: 2px; color: #b9c2ca; }
+.clabel { margin-top: 16px; font-size: 40px; font-weight: 900; text-align: center; line-height: 1.15; }
+.clabel small { display: block; font-size: 28px; color: #8a949d; font-weight: 700; }
+.badge { font-size: 30px; font-weight: 900; padding: 4px 14px; border-radius: 10px; background: #eef2f5; color: #15191d; margin-bottom: 10px; white-space: nowrap; }
+.twist { margin-top: 36px; font-size: 52px; font-weight: 800; line-height: 1.35; }
+.twist b { color: #1baf7a; font-size: 64px; }
