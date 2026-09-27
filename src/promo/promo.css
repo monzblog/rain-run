@@ -1,0 +1,64 @@
+html, body { margin: 0; background: #15191d; }
+body { font-family: 'Hiragino Sans', 'Noto Sans JP', system-ui, sans-serif; color: #eef2f5; }
+#frame { position: relative; width: 1080px; height: 1080px; overflow: hidden; }
+#c { width: 1080px; height: 1080px; display: block; }
+#overlay { position: absolute; inset: 0; pointer-events: none; }
+.divider { position: absolute; left: 0; right: 0; top: 539px; height: 3px; background: #15191d; }
+em { font-style: normal; color: #7fc4f5; }
+
+.title {
+  position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center;
+  background: radial-gradient(ellipse at center, rgba(12, 16, 20, 0.72), rgba(12, 16, 20, 0.35));
+  text-shadow: 0 4px 18px rgba(0, 0, 0, 0.6); z-index: 2;
+}
+.title h1 { font-size: 150px; margin: 10px 0; letter-spacing: 0.04em; font-weight: 900; }
+.title .sub { font-size: 54px; font-weight: 700; text-align: center; line-height: 1.4; }
+.title.cta h1 { font-size: 96px; }
+.title .chip { margin-top: 40px; font-size: 40px; padding: 14px 36px; border-radius: 999px; background: #7fc4f5; color: #0c1a26; font-weight: 800; text-shadow: none; }
+
+.hud { position: absolute; left: 30px; text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7); }
+.hud-0 { top: 24px; }
+.hud-1 { top: 564px; }
+.pill { font-size: 40px; font-weight: 800; padding: 4px 24px; border-radius: 999px; text-shadow: none; }
+.spd { font-size: 34px; margin-left: 12px; font-weight: 700; }
+.wet { font-size: 40px; margin-top: 6px; font-weight: 700; }
+.wet small { font-size: 30px; margin-left: 10px; color: #d5dce2; }
+.wet b { font-size: 88px; font-variant-numeric: tabular-nums; }
+.bar { width: 320px; height: 10px; background: rgba(255, 255, 255, 0.25); border-radius: 5px; overflow: hidden; }
+.bar div { height: 100%; }
+
+.tag { position: absolute; right: 24px; top: 490px; font-size: 26px; background: rgba(10, 14, 18, 0.75); padding: 8px 18px; border-radius: 10px; }
+.verdict {
+  position: absolute; left: 50%; transform: translateX(-50%); white-space: nowrap; top: 890px; font-size: 56px; font-weight: 800;
+  background: rgba(10, 14, 18, 0.85); padding: 18px 30px; border-radius: 20px; border: 2px solid #d95926;
+}
+.verdict em { color: #ff8a5c; }
+.verdict b { font-size: 92px; color: #fff; }
+.note { position: absolute; right: 30px; font-size: 44px; font-weight: 800; background: rgba(10, 14, 18, 0.8); padding: 12px 26px; border-radius: 16px; }
+.n0 { top: 400px; border-left: 10px solid #3987e5; }
+.n1 { top: 950px; border-left: 10px solid #d95926; }
+
+.dim { position: absolute; inset: 0; background: rgba(14, 18, 22, 0.82); }
+.panel { position: absolute; inset: 60px 60px; display: flex; flex-direction: column; justify-content: center; }
+.ptitle { font-size: 64px; font-weight: 900; margin-bottom: 24px; line-height: 1.3; }
+.legend { display: flex; gap: 40px; font-size: 32px; margin-bottom: 30px; color: #b9c2ca; }
+.legend i { display: inline-block; width: 36px; height: 14px; border-radius: 7px; margin-right: 12px; vertical-align: middle; }
+.rrow { display: grid; grid-template-columns: 1fr 150px; grid-template-rows: auto auto; margin-bottom: 34px; }
+.rlabel { grid-column: 1 / -1; font-size: 34px; font-weight: 700; margin-bottom: 8px; }
+.rbars { display: grid; gap: 8px; }
+.rb { display: flex; align-items: center; gap: 14px; height: 40px; }
+.rb .fill { height: 36px; border-radius: 0 10px 10px 0; min-width: 4px; }
+.rb span { font-size: 30px; font-variant-numeric: tabular-nums; color: #dfe5ea; white-space: nowrap; }
+.rpct { align-self: center; font-size: 52px; font-weight: 900; color: #ff8a5c; text-align: right; }
+.chart { width: 100%; }
+.chart .g { stroke: #2f373e; stroke-width: 2; }
+.chart .t { fill: #8a949d; font-size: 26px; }
+.chart .ax { fill: #b9c2ca; font-size: 26px; }
+.chart .mn { fill: #eef2f5; font-size: 36px; font-weight: 800; }
+.cols { display: flex; gap: 28px; align-items: flex-end; height: 560px; padding-top: 60px; }
+.col { flex: 1; height: 100%; display: flex; flex-direction: column; justify-content: flex-end; align-items: center; }
+.cbar { width: 100%; border-radius: 14px 14px 0 0; min-height: 4px; }
+.cval { font-size: 52px; font-weight: 900; margin-bottom: 10px; font-variant-numeric: tabular-nums; }
+.cval small { font-size: 26px; margin-left: 4px; color: #b9c2ca; }
+.clabel { margin-top: 14px; font-size: 36px; font-weight: 800; text-align: center; line-height: 1.2; }
+.clabel small { display: block; font-size: 24px; color: #8a949d; font-weight: 600; }

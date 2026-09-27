@@ -37,6 +37,7 @@ export class HumanMesh {
   readonly group = new THREE.Group()
   private parts: PartMesh[] = []
   mode: ColorMode = 'real'
+  satMm = SAT_MM
 
   constructor() {
     const tmp = new THREE.Color()
@@ -103,7 +104,7 @@ export class HumanMesh {
       p.dirty = false
       const mat = PARTS[i].material
       for (let v = 0, n = p.wet.length; v < n; v++) {
-        const k = 1 - Math.exp(-p.wet[v] / SAT_MM)
+        const k = 1 - Math.exp(-p.wet[v] / this.satMm)
         if (this.mode === 'real') {
           c.copy(BASE[mat]).lerp(WET[mat], k)
         } else {

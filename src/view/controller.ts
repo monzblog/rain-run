@@ -21,6 +21,8 @@ export class Controller {
   sims: RunnerSim[] = []
   params: Params
   playback = 1
+  // レーンごとの早送り倍率（プロモ動画で両者を同時にゴールさせる用）。null なら playback を使う
+  lanePlayback: number[] | null = null
   running = false
   layout: 'stack' | 'side' = 'stack'
   private raf = 0
@@ -77,9 +79,11 @@ export class Controller {
 
   // 実時間 dt 進める（プロモ動画の書き出し時は外から固定 dt で呼ぶ）
   tick(dt: number) {
-    const simDt = dt * this.playback
-    for (const s of this.sims) s.advance(simDt)
-    this.lanes.forEach((l) => l.update(dt, this.running ? simDt : dt))
+    this.sims.forEach((s, i) => {
+      const simDt = dt * (this.lanePlayback?.[i] ?? this.playback)
+      s.advance(simDt)
+      this.lanes[i].update(dt, this.running ? simDt : dt)
+    })
     if (this.running && this.done) this.running = false
     this.render()
   }

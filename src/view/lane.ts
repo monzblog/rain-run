@@ -45,7 +45,10 @@ export class LaneView {
   private splashAge: Float32Array
   private splashHead = 0
   private rng = makeRng(7)
-  private camAngle = 0
+  camAngle = 0
+  orbitSpeed = 0.6
+  orbitHeight = 1.45
+  orbitRadius = 2.7
   private sim: RunnerSim | null = null
   private standPose = makePose()
 
@@ -229,9 +232,9 @@ export class LaneView {
     const target = new THREE.Vector3(cx + 0.15, 0.95, 0)
     let desired: THREE.Vector3
     if (sim.finished) {
-      this.camAngle += dt * 0.6
+      this.camAngle += dt * this.orbitSpeed
       const a = 0.35 + this.camAngle
-      desired = new THREE.Vector3(cx + Math.sin(a) * 2.7, 1.45, Math.cos(a) * 2.7)
+      desired = new THREE.Vector3(cx + Math.sin(a) * this.orbitRadius, this.orbitHeight, Math.cos(a) * this.orbitRadius)
     } else {
       desired = new THREE.Vector3(cx + 1.3, 1.3, 3.1)
     }
