@@ -48,4 +48,4 @@ https://rain-run.monzblog.com （Cloudflare Pages / build: `npm run build` / out
 `npm run dev` を起動した状態で `npm run promo` → `promo/rain-run-promo.mp4`（18秒・1080×1080）
 
 ## Status
-公開中（labs）— https://rain-run.monzblog.com
+公開中（apps）— https://rain-run.monzblog.com
